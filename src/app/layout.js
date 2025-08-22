@@ -1,9 +1,7 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import { SessionProvider } from "next-auth/react";
 import Providers from "@/components/Providers";
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
+import LayoutWrapper from "@/components/LayoutWrapper";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -18,9 +16,7 @@ const geistMono = Geist_Mono({
 export const metadata = {
   title: "Shop Smart",
   description: "Shop Smart is an E-commarce web made by NEXT.js",
-  icons:{
-    icon:"/shopicon.svg"
-  }
+  icons: { icon: "/shopicon.svg" },
 };
 
 export default function RootLayout({ children }) {
@@ -28,9 +24,7 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body>
         <Providers>
-        <Navbar/>
-        {children}
-        <Footer/>
+          <LayoutWrapper>{children}</LayoutWrapper>
         </Providers>
       </body>
     </html>

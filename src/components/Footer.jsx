@@ -16,7 +16,7 @@ export default function Footer() {
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.8 }}
-      className="bg-white dark:bg-gray-900 text-gray-800 dark:text-gray-200 mt-10"
+      className="bg-white dark:bg-gray-900 text-gray-800 dark:text-gray-200 "
     >
       <div className="max-w-7xl mx-auto px-4 py-10 flex flex-col md:flex-row justify-between items-center">
         {/* Logo & Copy */}
