@@ -30,7 +30,7 @@ export default function LoginPage() {
   };
 
   const handleGoogleLogin = async () => {
-    await signIn("google", { callbackUrl: "/products" });
+    await signIn("google", { callbackUrl: "/" });
   };
 
   return (
@@ -81,7 +81,7 @@ export default function LoginPage() {
 
       <p className="text-center text-gray-500 dark:text-gray-400 mt-6">
         Don't have an account?{" "}
-        <a href="/register" className="text-blue-500 dark:text-blue-400 hover:underline">
+        <a href="/signup" className="text-blue-500 dark:text-blue-400 hover:underline">
           Sign up
         </a>
       </p>
