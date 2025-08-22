@@ -13,7 +13,7 @@ export default function DashboardSidebar({ user }) {
   const links = [
     { label: "Dashboard Home", href: "/dashboard", icon: <FiHome /> },
     { label: "Add Product", href: "/dashboard/add-product", icon: <FiPlus /> },
-    { label: "My Orders", href: "/dashboard/my-orders", icon: <FiShoppingCart /> },
+    { label: "My products", href: "/dashboard/my-products", icon: <FiShoppingCart /> },
   ];
 
   return (

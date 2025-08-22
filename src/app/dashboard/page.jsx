@@ -1,25 +1,28 @@
-export default function DashboardHome() {
-  return (
-    <div className="space-y-6">
-      <h2 className="text-3xl font-bold text-gray-800 dark:text-gray-100">
-        Welcome to your Dashboard
-      </h2>
-      <p className="text-gray-600 dark:text-gray-300">
-        Manage your products, view orders, and check analytics.
-      </p>
+"use client";
+import { useEffect, useState } from "react";
 
-      <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        <div className="bg-white dark:bg-gray-800 shadow rounded-xl p-6 hover:scale-105 transition transform">
-          <h3 className="font-semibold mb-2">Total Products</h3>
-          <p className="text-2xl font-bold">24</p>
+export default function DashboardHome() {
+  const [stats, setStats] = useState({ total: 0, avgPrice: 0 });
+
+  useEffect(() => {
+    fetch("/api/products/stats")
+      .then((res) => res.json())
+      .then((data) => setStats(data));
+  }, []);
+
+  return (
+    <div className="p-6">
+      <h1 className="text-3xl font-bold mb-6">Dashboard Overview</h1>
+
+      <div className="grid grid-cols-2 gap-6 max-w-lg">
+        <div className="bg-blue-600 text-white p-6 rounded-lg shadow-lg">
+          <h2 className="text-xl">Total Products</h2>
+          <p className="text-4xl font-bold mt-2">{stats.total}</p>
         </div>
-        <div className="bg-white dark:bg-gray-800 shadow rounded-xl p-6 hover:scale-105 transition transform">
-          <h3 className="font-semibold mb-2">Orders</h3>
-          <p className="text-2xl font-bold">12</p>
-        </div>
-        <div className="bg-white dark:bg-gray-800 shadow rounded-xl p-6 hover:scale-105 transition transform">
-          <h3 className="font-semibold mb-2">Revenue</h3>
-          <p className="text-2xl font-bold">$4,500</p>
+
+        <div className="bg-green-600 text-white p-6 rounded-lg shadow-lg">
+          <h2 className="text-xl">Average Price</h2>
+          <p className="text-4xl font-bold mt-2">${stats.avgPrice.toFixed(2)}</p>
         </div>
       </div>
     </div>
