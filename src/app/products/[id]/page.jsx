@@ -50,7 +50,7 @@ export default function ProductDetails() {
   }
 
   return (
-    <main className="p-6 max-w-4xl mx-auto min-h-screen">
+    <main className="p-4 max-w-7xl mx-auto min-h-screen py-20">
       <button
         onClick={() => router.back()}
         className="mb-6 text-blue-600 hover:underline"

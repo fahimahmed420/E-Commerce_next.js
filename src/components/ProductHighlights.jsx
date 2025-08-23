@@ -63,7 +63,7 @@ export default function ProductHighlights() {
                   alt={product.name}
                   className="w-full h-40 object-cover rounded-lg"
                 />
-                <h3 className="text-lg font-semibold mt-4">{product.name}</h3>
+                <h3 className="text-lg font-semibold mt-4 text-black">{product.name}</h3>
                 <p className="text-gray-600 text-sm flex-1">
                   {product.description}
                 </p>
