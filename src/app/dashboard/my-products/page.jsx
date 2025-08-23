@@ -54,7 +54,7 @@ export default function MyProductsPage() {
 
       <table className="w-full border">
         <thead>
-          <tr className="bg-gray-100">
+          <tr className="bg-gray-800">
             <th className="p-2 border">Image</th>
             <th className="p-2 border">Name</th>
             <th className="p-2 border">Price</th>
